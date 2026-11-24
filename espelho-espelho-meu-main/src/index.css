@@ -1,0 +1,17 @@
+/* Reset básico para garantir que padding e borda não estourem a largura dos elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Paleta editorial suave inspirada em páginas de livros e livrarias */
+body {
+    margin: 0;
+    background: #f5f3ef;
+    color: #1c1917;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}

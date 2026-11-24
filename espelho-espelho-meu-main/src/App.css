@@ -1,0 +1,443 @@
+.app {
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   CABEÇALHO (Header)
+   ========================================================================== */
+.header {
+    height: 64px;
+    border-bottom: 1px solid #e7e5e4;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 max(20px, calc((100vw - 935px) / 2));
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1e293b;
+}
+
+.header__brand-icon {
+    font-size: 24px;
+    color: #b45309;
+}
+
+.header__logo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f3ef;
+    border: 1px solid #e7e5e4;
+    border-radius: 999px;
+    padding: 6px 14px;
+    width: min(100%, 290px);
+}
+
+.header__search-icon {
+    color: #78716c;
+    flex-shrink: 0;
+}
+
+.header__search input {
+    border: 0;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #1c1917;
+}
+
+.header__actions {
+    display: flex;
+    gap: 14px;
+}
+
+/* ==========================================================================
+   FEED CENTRAL
+   ========================================================================== */
+.feed {
+    width: min(100%, 490px);
+    margin: 24px auto;
+    display: grid;
+    gap: 22px;
+}
+
+/* ==========================================================================
+   BARRA DE STORIES (Desafio 5)
+   ========================================================================== */
+.stories {
+    background: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 12px;
+    padding: 14px 12px;
+}
+
+.stories__list {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.story-item {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 68px;
+}
+
+.story-item__ring {
+    padding: 2px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #b45309, #0284c7);
+    display: grid;
+    place-items: center;
+}
+
+.story-item--selected .story-item__ring {
+    background: #16a34a;
+}
+
+.story-item__avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 2px solid #ffffff;
+    display: block;
+}
+
+.story-item__user {
+    font-size: 11px;
+    color: #44403c;
+    max-width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.story-viewer {
+    margin-top: 12px;
+    padding: 12px;
+    background: #faf8f5;
+    border-left: 3px solid #b45309;
+    border-radius: 6px;
+}
+
+.story-viewer__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #57534e;
+    margin-bottom: 6px;
+}
+
+.story-viewer__close {
+    margin-left: auto;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    color: #78716c;
+    font-weight: 700;
+}
+
+.story-viewer__text {
+    margin: 0;
+    font-size: 13px;
+    font-style: italic;
+    color: #292524;
+    line-height: 1.45;
+}
+
+/* ==========================================================================
+   CARTÃO DE PUBLICAÇÃO (Post)
+   ========================================================================== */
+.post {
+    background: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.post__header {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post__avatar {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    background: #efefef;
+}
+
+.post__user {
+    display: grid;
+    gap: 2px;
+}
+
+.post__user strong {
+    font-size: 14px;
+}
+
+.post__user span {
+    color: #78716c;
+    font-size: 12px;
+}
+
+.post__author-badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.post__more {
+    margin-left: 4px;
+}
+
+.icon-button {
+    border: 0;
+    background: transparent;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 22px;
+    color: #292524;
+    display: grid;
+    place-items: center;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.icon-button:hover {
+    opacity: 0.65;
+    transform: scale(1.06);
+}
+
+.icon-button--active {
+    color: #b45309;
+}
+
+.icon-button--liked {
+    color: #e11d48;
+}
+
+.icon-button--saved {
+    color: #b45309;
+}
+
+.post__image-wrapper {
+    cursor: pointer;
+    background: #0f172a;
+}
+
+.post__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.post__content {
+    padding: 12px 14px 14px;
+}
+
+.post__actions {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.post__actions .icon-button {
+    padding: 0;
+}
+
+.post__actions .icon-button:last-child {
+    margin-left: auto;
+}
+
+.post__likes {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.post__book-title {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0369a1;
+}
+
+.post__caption {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.post__caption strong {
+    margin-right: 6px;
+}
+
+/* ==========================================================================
+   COMENTÁRIOS (Desafio 4)
+   ========================================================================== */
+.post__comments {
+    margin-top: 10px;
+    display: grid;
+    gap: 4px;
+}
+
+.post__comments-count {
+    font-size: 12px;
+    color: #78716c;
+    margin-bottom: 2px;
+}
+
+.post__comment-item {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.4;
+}
+
+.post__comment-item strong {
+    margin-right: 6px;
+}
+
+.post__time {
+    font-size: 11px;
+    color: #a8a29e;
+    margin-top: 6px;
+}
+
+.post__comment-form {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #f5f5f4;
+    display: flex;
+    gap: 8px;
+}
+
+.post__comment-form input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 13.5px;
+    background: transparent;
+}
+
+.post__comment-form button {
+    border: 0;
+    background: transparent;
+    color: #0284c7;
+    font-weight: 700;
+    font-size: 13.5px;
+    cursor: pointer;
+}
+
+.post__comment-form button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* ==========================================================================
+   ESTADO VAZIO DO FEED
+   ========================================================================== */
+.feed__empty {
+    background: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 12px;
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.feed__reset-button {
+    margin-top: 8px;
+    border: 0;
+    background: #b45309;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding-bottom: 58px;
+    }
+
+    .header__search {
+        max-width: 170px;
+    }
+
+    .feed {
+        width: 100%;
+        margin: 0;
+        gap: 12px;
+    }
+
+    .post,
+    .stories {
+        border-inline: 0;
+        border-radius: 0;
+    }
+
+    .header__actions {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background: #ffffff;
+        border-top: 1px solid #e7e5e4;
+        z-index: 10;
+    }
+
+    .mobile-nav button {
+        border: 0;
+        background: transparent;
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
