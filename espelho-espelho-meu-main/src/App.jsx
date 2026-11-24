@@ -95,7 +95,6 @@ function App() {
       {/* Navegação inferior para telas pequenas (responsividade mobile) */}
       <nav className="mobile-nav" aria-label="Navegação móvel">
         <button
-          className={`icon-button ${!onlySaved ? 'icon-button--active' : ''}`}
           type="button"
           aria-label="Início"
           onClick={() => {
@@ -105,23 +104,17 @@ function App() {
         >
           <FiHome />
         </button>
-        <button
-          className="icon-button"
-          type="button"
-          aria-label="Pesquisar"
-          onClick={() => document.querySelector('.header__search input')?.focus()}
-        >
+        <button type="button" aria-label="Pesquisar">
           <FiSearch />
         </button>
         <button
-          className={`icon-button ${onlySaved ? 'icon-button--active' : ''}`}
           type="button"
           aria-label="Salvos"
           onClick={() => setOnlySaved(!onlySaved)}
         >
           <FiBookmark />
         </button>
-        <button className="icon-button" type="button" aria-label="Atividades">
+        <button type="button" aria-label="Atividades">
           <FiHeart />
         </button>
       </nav>
